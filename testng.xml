@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Practice Suite">
-	<test name="Test Basics 1">
+<suite name="BattleNet Test Suite">
+	<test name="BattleNet Test samples">
+	
+		<parameter name="url" value="https://www.blizzard.com/en-us/" />
   
 	  	<parameter name="username" value="pardalzinnn@gmail.com" />
 		<parameter name="password" value="Pardal123" />
 		<parameter name="battleTag" value="SpeedyRogue" />
-		<parameter name="url" value="https://www.blizzard.com/en-us/" />
 	
 		<classes>
+			<class name="com.tests.validateLogin"/>
 			<class name="com.tests.validatePurchaseProduct"/>
 		</classes>
 	</test> 

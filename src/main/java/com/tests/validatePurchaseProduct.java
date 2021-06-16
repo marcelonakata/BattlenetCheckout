@@ -34,35 +34,20 @@ public class validatePurchaseProduct extends baseTest {
 		AccountPage accountPage = new AccountPage(driver);
 		
 		accountPage.goToShop();
-		
 	}
 	
-	@Test (enabled=false)
+	@Test
 	public void validateTitleSelectProdut() throws InterruptedException {
 		
 		ShopPage shopPage = new ShopPage(driver);
 		
 		shopPage.search("Diablo III");
 		
-		System.out.println(shopPage.getProductTitle().contains("Diablo® III"));
+		Assert.assertTrue(shopPage.getProductTitle().contains("Diablo® III"));
 		
 	}
 	
-	@Test (enabled=false)
-	@Parameters({})	
-	public void validateSelectProdut() throws InterruptedException {
-		
-		ShopPage shopPage = new ShopPage(driver);
-		
-		shopPage.search("Diablo III");
-		
-		shopPage.clickBuyNowButton();
-		
-		shopPage.clickContinueButton();
-		
-	}
-	
-	@Test (dataProvider="PaymentMethod" ,enabled=false)
+	@Test (dataProvider="PaymentMethod")
 	public void validatePaymentMethodOptions(String paymentMethod) throws InterruptedException {
 		
 		ShopPage shopPage = new ShopPage(driver);
